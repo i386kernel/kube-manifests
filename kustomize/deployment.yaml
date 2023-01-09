@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: se-spring-boot
+  namespace: tanzu-se-spring-boot-app
+  labels:
+    app: se-spring-boot
+spec:
+  replicas: 2
+  template:
+    metadata:
+      name: se-spring-boot
+      labels:
+        app: se-spring-boot
+    spec:
+      containers:
+        - name: se-spring-boot
+          image: lnanjangud653/tanzu-se-spring-boot-app:1.0.0
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          securityContext:
+            runAsUser: 0
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: se-spring-boot
+
