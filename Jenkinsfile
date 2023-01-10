@@ -14,7 +14,7 @@ pipeline {
                 }
            }
         }
-       stage ("Push to Gitops Repo"){
+       stage("Push to Gitops Repo"){
                steps{
                    sh 'git add .'
                    sh 'git commit -m "updated app image to newer version"'
