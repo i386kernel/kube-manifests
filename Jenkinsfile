@@ -9,8 +9,8 @@ pipeline {
                 echo "New Image ID:"
                 echo "${ImageSHA}"
                 echo "Updating Image..."
-                sh "yq eval '.spec.template.spec.containers[0].image = "tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@${ImageSHA}"' ./kustomize/deployment.yaml"
-                sh 'cat ../kustomize/deployment.yaml'
+                sh "yq eval '".spec.template.spec.containers[0].image" = "tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@${ImageSHA}"' ./kustomize/deployment.yaml"
+                sh 'cat ./kustomize/deployment.yaml'
                 }
            }
        stage("Push to Gitops Repo"){
