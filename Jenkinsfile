@@ -15,6 +15,9 @@ pipeline {
            }
        stage("Push to Gitops Repo"){
                steps{
+                   sh 'git clone https://github.com/i386kernel/kube-manifests.git'
+                   sh 'cp ./kustomize/deployment.yaml kube-manifests/kustomize/'
+                   sh 'cd kube-manifests'
                    sh 'git add .'
                    sh 'git commit -m "updated app image to newer version"'
                    sh 'git push'
