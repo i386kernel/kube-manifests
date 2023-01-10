@@ -1,34 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: se-spring-boot
-  namespace: tanzu-se-spring-boot-app
+  creationTimestamp: null
   labels:
     app: se-spring-boot
+  name: se-spring-boot
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: se-spring-boot
+  strategy: {}
   template:
     metadata:
-      name: se-spring-boot
+      creationTimestamp: null
       labels:
         app: se-spring-boot
     spec:
       containers:
-        - name: se-spring-boot
-          image: tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic:latest
-          imagePullPolicy: IfNotPresent
-          resources:
-            requests:
-              memory: "512Mi"
-              cpu: "250m"
-            limits:
-              memory: "1Gi"
-              cpu: "500m"
-          securityContext:
-            runAsUser: 0
-          ports:
-            - containerPort: 8080
-      restartPolicy: Always
-  selector:
-    matchLabels:
-      app: se-spring-boot
+      - image: tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@sha256:c2cce060c0517174e51890c0a9700abb9311991ec97479959379944af352f2ef
+        name: pet-clinic
+        resources: {}
+status: {}
