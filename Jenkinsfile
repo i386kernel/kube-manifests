@@ -13,7 +13,6 @@ pipeline {
                 sh 'cat ../kustomize/deployment.yaml'
                 }
            }
-        }
        stage("Push to Gitops Repo"){
                steps{
                    sh 'git add .'
