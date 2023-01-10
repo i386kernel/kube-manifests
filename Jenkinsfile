@@ -19,7 +19,7 @@ pipeline {
                    sh 'cd kube-manifests'
                    sh 'git add .'
                    sh 'git commit -m "updated app image to newer version"'
-                   sh 'git push'
+                   sh 'git push origin main'
                }
     }
  }
