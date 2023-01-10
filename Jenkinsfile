@@ -9,7 +9,7 @@ pipeline {
                 echo "New Image ID:"
                 echo "${ImageSHA}"
                 echo "Updating Image..."
-                sh 'yq ./kustomize/deployment.yaml "spec.template.spec.containers[0].image" = "tbsregistry.tanzu.lab/tbs-project/spring-images/${ImageSHA}"'
+                sh "yq eval '.spec.template.spec.containers[0].image = "tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@${ImageSHA}"' ./kustomize/deployment.yaml"
                 sh 'cat ../kustomize/deployment.yaml'
                 }
            }
