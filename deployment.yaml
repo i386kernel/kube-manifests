@@ -5,6 +5,7 @@ metadata:
   labels:
     app: se-spring-boot
   name: se-spring-boot
+  namespace: se-spring-boot-app
 spec:
   replicas: 2
   selector:
@@ -18,7 +19,7 @@ spec:
         app: se-spring-boot
     spec:
       containers:
-      - image: tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@sha256:c2cce060c0517174e51890c0a9700abb9311991ec97479959379944af352f2ef
+      - image: tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@sha256:034fd05ebb6c4729d73d256f385895744c836a07f5fe16b78deed00556b08e5c
         name: pet-clinic
         resources: {}
 status: {}
