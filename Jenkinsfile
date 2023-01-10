@@ -17,7 +17,7 @@ pipeline {
                steps{
                    sh 'cp ./kustomize/deployment.yaml kube-manifests/kustomize/'
                    sh 'pwd'
-                   sh ' ls -la'
+                   sh 'ls -la'
                    sh 'cd kube-manifests'
                    sh 'git add .'
                    sh 'git commit -m "updated app image to newer version"'
