@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: se-spring-boot
-          image: lnanjangud653/tanzu-se-spring-boot-app:1.0.0
+          image: tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@sha256:686839f88503ec66c49fcd59605f38f3ab19783fc09b66977bd93a7f7130aeb3
           imagePullPolicy: IfNotPresent
           resources:
             requests:
