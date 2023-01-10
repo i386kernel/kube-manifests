@@ -11,7 +11,6 @@ pipeline {
                 echo "Updating Image..."
                 sh '''yq eval '".spec.template.spec.containers[0].image" = "tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic@${ImageSHA}"' ./kustomize/deployment.yaml'''
                 sh 'cat ./kustomize/deployment.yaml'
-                sh 'git rm --cached kube-manifests'
                 }
            }
        stage("Push to Gitops Repo"){
