@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vac-redis
+  labels:
+    app: vac-redis
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: vac-redis
+      labels:
+        app: vac-redis
+    spec:
+      containers:
+        - name: vac-redis
+          image: tanzuharbor.tanzu.lab/appcatalog-ns/ubuntu-18/redis@sha256:050a6af600eecf5143614f04949d32fc9a17e9d356d183892cba085ed5ce7398
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: vac-redis
