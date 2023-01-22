@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
         imagerepo = "tanzuharbor.tanzu.lab/app-images/pet-clinic@"
-        TBS_BUILT_IMG = "tbsregistry.tanzu.lab/tbs-project/spring-images/pet-clinic:latest"
+        TBS_BUILT_IMG = "tanzuharbor.tanzu.lab/tbs-project/spring-images/pet-clinic:latest"
     }
     stages {
         stage("Pipeline Triggerred"){
