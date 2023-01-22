@@ -19,7 +19,7 @@ spec:
         app: se-spring-boot
     spec:
       containers:
-      - image: tanzuharbor.tanzu.lab/app-images/pet-clinic@sha256:3aacb4ce04febfb74c94ffce1b2a2a18bbbbd9f35489904ce6475d6d7c181608
+      - image: tanzuharbor.tanzu.lab/app-images/pet-clinic@sha256:deeea2bfc8bfa4e3e9338fe7706369563446acfc08eb2aeeca658e7ca5c100af
         name: pet-clinic
         resources: {}
 status: {}
