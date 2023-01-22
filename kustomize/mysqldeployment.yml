@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vac-mysql
+  labels:
+    app: vac-mysql
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: vac-mysql
+      labels:
+        app: vac-mysql
+    spec:
+      containers:
+        - name: vac-mysql
+          image: tanzuharbor.tanzu.lab/appcatalog-ns/centos-7/mysql@sha256:b118ad82019ee6e5ec5fd34409baf24d039002ab693cb51b58263affe4f12ef5
+          imagePullPolicy: IfNotPresent
+          command:
+            - sleep
+            - infinity
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: vac-mysql
